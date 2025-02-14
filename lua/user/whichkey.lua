@@ -48,6 +48,15 @@ function M.config()
 
   wk.add {
     {
+      "<leader>gf",
+      "<cmd>:Gen Fix_Code<CR>",
+      desc = "Fix Code",
+    },
+    {
+      "<leader>gg",
+      desc = "Gen",
+    },
+    {
       "<leader>a",
       group = "AI",
       icon = {
