@@ -48,3 +48,6 @@ autocmd("Signal", {
     require('nvchad.utils').reload()
   end
 })
+
+require('markdown-commit-reminder')
+require('pandoc_convert')

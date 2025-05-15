@@ -199,36 +199,42 @@ return {
   --     }
   --   end,
   -- },
+  -- {
+  --   "sainnhe/gruvbox-material",
+  --   event = "VeryLazy"
+  -- },
+  -- {
+  --   "LunarVim/darkplus.nvim",
+  --   event = "VeryLazy"
+  -- },
+
+  -- {
+  --   "github/copilot.vim",
+  --   event = "VeryLazy"
+  -- },
+
   {
-    -- "Kavi-Arya/redshit",
-    "LunarVim/darkplus.nvim",
-    "Mofiqul/vscode.nvim",
-    "sainnhe/gruvbox-material",
-    "shaunsingh/nord.nvim",
-    "slugbyte/lackluster.nvim",
-    "sainnhe/everforest",
-    "catppuccin/nvim",
-    "cryptomilk/nightcity.nvim",
-    "rose-pine/neovim",
+    'kiddos/gemini.nvim',
+    event = "VeryLazy",
+    config = function()
+      require('gemini').setup({
+        completion = {
+          insert_result_key = '<Tab>'
+        }
+      })
+    end
   },
 
   {
-    "MeanderingProgrammer/render-markdown.nvim",
-    opts = {
-      code = {
-        sign = false,
-        width = "block",
-        right_pad = 1,
-      },
-      heading = {
-        sign = false,
-        icons = {},
-      },
-      checkbox = {
-        enabled = false,
-      },
-    },
-    ft = { "markdown", "norg", "rmd", "org", "codecompanion" },
+    "chrisgrieser/nvim-origami",
+    event = "VeryLazy",
+    -- config = function()
+    --   require('nvim-origami').setup({
+    --     vim.keymap.set("n", "<Left>", function() require("origami").h() end)
+    --     vim.keymap.set("n", "<Right>", function() require("origami").l() end)
+    --   })
+    -- end,
+    opts = {}, -- needed even when using default config
   },
 
   require "user.obsidian",
@@ -239,9 +245,11 @@ return {
   require "user.texpresso",
   require "user.codeium",
   require "user.gen",
-  require "user.codecomplition",
+  -- require "user.codecomplition",
   require "user.undotree",
   require "user.marvim",
+  require "user.render-markdown",
+  require "user.colorscheme",
   -- require "user.cmp_ai",
   -- require "user.whichkey",
 }

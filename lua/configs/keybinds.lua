@@ -8,6 +8,10 @@ keymap("n", "<Space>", "", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
 keymap("n", "<m-tab>", "<c-6>", opts)
 
+keymap("n", "<Left>", function() require("origami").h() end)
+keymap("n", "<Right>", function() require("origami").l() end)
+
+
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 keymap("n", "*", "*zz", opts)

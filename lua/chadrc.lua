@@ -7,14 +7,14 @@ function M.check_environment()
   local niri_running = io.popen("pgrep -x niri"):read("*a")
 
   if dwm_running ~= "" then
-    M.base46 = { theme = "gruvchad" }
+    M.base46 = { theme = "chadwal" }
   elseif hyprland_running ~= "" then
-    M.base46 = { theme = "gruvchad" }
+    M.base46 = { theme = "chadwal" }
   elseif niri_running ~= "" then
-    M.base46 = { theme = "gruvchad" }
+    M.base46 = { theme = "vscode_dark" }
   else
     print("No supported environment detected.")
-    M.base46 = { theme = "everforest" } -- Fallback theme
+    M.base46 = { theme = "vscode_dark" }
   end
 end
 
