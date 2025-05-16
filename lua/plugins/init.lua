@@ -212,7 +212,10 @@ return {
   --   "github/copilot.vim",
   --   event = "VeryLazy"
   -- },
-
+  {
+    "tpope/vim-fugitive",
+    event = "VeryLazy"
+  },
   {
     'kiddos/gemini.nvim',
     event = "VeryLazy",
