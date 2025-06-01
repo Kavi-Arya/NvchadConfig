@@ -212,10 +212,73 @@ return {
   --   "github/copilot.vim",
   --   event = "VeryLazy"
   -- },
+  
+-- In your lazy.nvim plugin specification for fugitive
+-- e.g., lua/plugins/fugitive.lua or in your main plugins table
+
   {
-    "tpope/vim-fugitive",
-    event = "VeryLazy"
+    'tpope/vim-fugitive',
+    event = "VeryLazy",
+    config = function()
+    end,
+    keys = {
+      {
+        "<leader>gaA",
+        function()
+          vim.cmd("Git add *")
+          vim.notify("Add all files", vim.log.levels.INFO)
+        end,
+        desc = "Git add all",
+      },
+      {
+        "<leader>gaa",
+        function()
+          vim.cmd("Git add %")
+          vim.notify("Add current file", vim.log.levels.INFO)
+        end,
+        desc = "Git add current file",
+      },
+      -- Alternative for staging: using :Gwrite (writes and stages the current buffer)
+      -- {
+      --   "<leader>gs", -- "git stage"
+      --   ":Gwrite<CR>",
+      --   noremap = true,
+      --   silent = true,
+      --   desc = "Git stage current file (Gwrite)",
+      -- },
+
+      -- Keybinding for :Git commit
+      -- Example: <leader>gc for "git commit"
+      {
+        "<leader>gc",
+        ":Git commit<CR>",
+        noremap = true,
+        silent = true,
+        desc = "Git commit",
+      },
+
+      -- Keybinding for :Git push
+      -- Example: <leader>gp for "git push"
+      {
+        "<leader>gp",
+        ":Git push<CR>",
+        noremap = true,
+        silent = true,
+        desc = "Git push",
+      },
+
+      -- Keybinding to open Git status window
+      -- Example: <leader>gs for "git status" (if not used for Gwrite)
+      {
+        "<leader>gst", -- Differentiating from potential 'gs' for Gwrite
+        ":Git<CR>",
+        noremap = true,
+        silent = true,
+        desc = "Git status (Fugitive window)",
+      },
+    },
   },
+
   {
     'kiddos/gemini.nvim',
     event = "VeryLazy",
@@ -239,6 +302,13 @@ return {
     -- end,
     opts = {}, -- needed even when using default config
   },
+
+--   {
+--    "m4xshen/hardtime.nvim",
+--    lazy = false,
+--    dependencies = { "MunifTanjim/nui.nvim" },
+--    opts = {},
+-- },
 
   require "user.obsidian",
   require "user.contex",
