@@ -78,7 +78,6 @@ keymap("i", "<C-c>", "<Esc>")
 
 -- keymap("n", "<leader>f", vim.lsp.buf.format)
 
-
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 keymap("n", "<leader>m", "`")

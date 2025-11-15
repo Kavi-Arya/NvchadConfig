@@ -10,7 +10,7 @@ function M.check_environment()
     M.base46 = { theme = "chadwal" }
     -- print("DWM")
   elseif hyprland_running ~= "" then
-    M.base46 = { theme = "rosepine" }
+    M.base46 = { theme = "chadwal" }
     -- print("Hyprland")
   elseif niri_running ~= "" then
     M.base46 = { theme = "vscode_dark" }
