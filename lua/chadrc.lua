@@ -7,7 +7,7 @@ function M.check_environment()
   local niri_running = io.popen("pgrep -x niri"):read("*a")
 
   if dwm_running ~= "" then
-    M.base46 = { theme = "chadwal" }
+    M.base46 = { theme = "gruvchad" }
     -- print("DWM")
   elseif hyprland_running ~= "" then
     M.base46 = { theme = "chadwal" }

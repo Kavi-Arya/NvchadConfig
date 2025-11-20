@@ -279,17 +279,17 @@ return {
     },
   },
 
-  {
-    'kiddos/gemini.nvim',
-    event = "VeryLazy",
-    config = function()
-      require('gemini').setup({
-        completion = {
-          insert_result_key = '<Tab>'
-        }
-      })
-    end
-  },
+  -- {
+  --   'kiddos/gemini.nvim',
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require('gemini').setup({
+  --       completion = {
+  --         insert_result_key = '<Tab>'
+  --       }
+  --     })
+  --   end
+  -- },
 
   {
     "chrisgrieser/nvim-origami",
@@ -316,13 +316,14 @@ return {
   require "user.minimap",
   require "user.vimtex",
   require "user.texpresso",
-  require "user.codeium",
+  -- require "user.codeium",
   require "user.gen",
   -- require "user.codecomplition",
   require "user.undotree",
   require "user.marvim",
   require "user.render-markdown",
   require "user.colorscheme",
+  -- require "user.autofold",
   -- require "user.cmp_ai",
   -- require "user.whichkey",
 }
