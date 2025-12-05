@@ -10,6 +10,18 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Tell the LSP to recognize the `vim` global
+        globals = { 'vim' },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+    },
+   }
     end,
   },
 
@@ -279,17 +291,17 @@ return {
     },
   },
 
-  -- {
-  --   'kiddos/gemini.nvim',
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require('gemini').setup({
-  --       completion = {
-  --         insert_result_key = '<Tab>'
-  --       }
-  --     })
-  --   end
-  -- },
+  {
+    'kiddos/gemini.nvim',
+    event = "VeryLazy",
+    config = function()
+      require('gemini').setup({
+        completion = {
+          insert_result_key = '<Tab>'
+        }
+      })
+    end
+  },
 
   {
     "chrisgrieser/nvim-origami",
@@ -316,7 +328,7 @@ return {
   require "user.minimap",
   require "user.vimtex",
   require "user.texpresso",
-  -- require "user.codeium",
+  require "user.codeium",
   require "user.gen",
   -- require "user.codecomplition",
   require "user.undotree",

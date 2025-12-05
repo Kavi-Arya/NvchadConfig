@@ -53,3 +53,17 @@ require('markdown-commit-reminder')
 require('pandoc_convert')
 require('user.autofold')
 -- require('write')
+
+local spell_group = vim.api.nvim_create_augroup("AutoSpell", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "markdown", "tex", "plaintex" },
+    callback = function()
+        vim.opt_local.spell = true
+        vim.opt_local.spelllang = "en_us"
+        
+        -- Optional: Ensure the highlight is red undercurl
+        vim.api.nvim_set_hl(0, 'SpellBad', { sp = 'red', undercurl = true })
+    end,
+    group = spell_group,
+})
