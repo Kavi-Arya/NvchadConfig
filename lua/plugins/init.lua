@@ -296,6 +296,13 @@ return {
     event = "VeryLazy",
     config = function()
       require('gemini').setup({
+        model_config = {
+          model_id = 'gemini-3-pro-preview',
+          temperature = 0.10,
+          top_k = 128,
+          response_mime_type = 'text/plain',
+        },
+
         completion = {
           insert_result_key = '<Tab>'
         }

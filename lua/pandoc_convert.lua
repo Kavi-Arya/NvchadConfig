@@ -89,7 +89,8 @@ local function md_to_pdf_pandoc()
             -- The Primary Job (With Template)
             vim.notify("Compiling PDF...", vim.log.levels.INFO)
             local args_template = {
-                'pandoc', current_file, '--template=double-two-column.tex', '-o', output_pdf_path
+                'pandoc', current_file, '--template=arabica.latex', '-o', output_pdf_path
+                -- 'pandoc', current_file, '--template=double-two-column.tex', '-o', output_pdf_path
             }
 
             vim.fn.jobstart(args_template, create_handlers(
