@@ -341,6 +341,7 @@ return {
   require "user.undotree",
   require "user.marvim",
   require "user.render-markdown",
+  -- require "user.autospell",
   require "user.colorscheme",
   -- require "user.autofold",
   -- require "user.cmp_ai",

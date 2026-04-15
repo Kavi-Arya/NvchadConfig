@@ -51,6 +51,8 @@ autocmd("Signal", {
 
 require('markdown-commit-reminder')
 require('pandoc_convert')
+require('user.autospell')
+
 require('user.autofold')
 -- require('write')
 
